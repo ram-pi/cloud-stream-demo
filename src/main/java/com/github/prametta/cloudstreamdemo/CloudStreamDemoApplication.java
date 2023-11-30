@@ -29,8 +29,10 @@ public class CloudStreamDemoApplication {
     }
 
     @Bean
-    public Consumer<String> sink() {
-        return System.out::println;
+    public Consumer<String> process() {
+        return input -> {
+            System.out.println("Received message: " + input);
+        };
     }
 }
 
